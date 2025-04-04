@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+# Sistema de Autenticação - React
 
-## Project info
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-**URL**: https://lovable.dev/projects/7f8cb47d-d468-4ee4-9319-ad757729dac2
+## 📋 Sobre o Projeto
 
-## How can I edit this code?
+Este projeto implementa um sistema de autenticação completo em React utilizando JavaScript puro e CSS. O sistema inclui páginas de login, registro, rota protegida e uma página inicial para usuários autenticados. (foi criado com objetivo de ser integrado a outro projeto meu: https://github.com/nicolaszprado/auth-project-nicolasz)
 
-There are several ways of editing your application.
+## 🚀 Características
 
-**Use Lovable**
+- ✅ Sistema de autenticação completo (login/registro)
+- 🔒 Rotas protegidas com redirecionamento automático
+- 🔄 Gestão de estado com Context API
+- 📱 Design responsivo
+- 📄 Validação de formulários
+- 🌐 Suporte para comunicação com API
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7f8cb47d-d468-4ee4-9319-ad757729dac2) and start prompting.
+## 📁 Estrutura do Projeto
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+src/
+├── components/
+│   ├── InputField.jsx     # Componente reutilizável para campos de formulário
+│   └── ProtectedRoute.jsx # Componente para rotas protegidas
+├── context/
+│   └── AuthContext.jsx    # Context API para gerenciar autenticação
+├── pages/
+│   ├── HomePage.jsx       # Página principal após login
+│   ├── LoginPage.jsx      # Página de login
+│   ├── NotFound.jsx       # Página 404
+│   └── RegisterPage.jsx   # Página de registro
+├── services/
+│   └── authService.js     # Serviço de autenticação com API
+├── styles/
+│   ├── AuthPages.css      # Estilos para as páginas de autenticação
+│   ├── HomePage.css       # Estilos para a página principal
+│   ├── InputField.css     # Estilos para componentes de entrada
+│   └── NotFound.css       # Estilos para página 404
+├── App.js                 # Componente principal com rotas
+└── main.js                # Ponto de entrada da aplicação
+```
 
-**Use your preferred IDE**
+## 🛠️ Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário
+- **React Router**: Sistema de roteamento para navegação entre páginas
+- **Context API**: Gerenciamento de estado global
+- **CSS**: Estilização sem dependências externas
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📦 Instalação e Uso
 
-Follow these steps:
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Instale as dependências:
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Execute o servidor de desenvolvimento:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Acesse a aplicação em seu navegador:
+```
+http://localhost:8080
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔧 Configuração
 
-**Use GitHub Codespaces**
+Para conectar com sua própria API, edite o arquivo `src/services/authService.js` e atualize a constante `API_URL` com a URL da sua API:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```javascript
+const API_URL = "https://sua-api.com";
+```
 
-## What technologies are used for this project?
+## 🖥️ Páginas
 
-This project is built with:
+### Página de Login
+- Formulário com validação de email e senha
+- Opção "Lembrar-me"
+- Link para a página de registro
+- Gestão de erros de autenticação
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Página de Registro
+- Formulário com validação completa
+- Nome de usuário, email e senha
+- Confirmação de senha
+- Gestão de erros (ex: email já cadastrado)
 
-## How can I deploy this project?
+### Página Inicial
+- Exibe informações do usuário logado
+- Botão de logout
+- Interface protegida para usuários autenticados
 
-Simply open [Lovable](https://lovable.dev/projects/7f8cb47d-d468-4ee4-9319-ad757729dac2) and click on Share -> Publish.
+### Página 404
+- Página de erro personalizada
+- Link para retornar à página inicial
 
-## Can I connect a custom domain to my Lovable project?
+## 🔐 Segurança
 
-Yes it is!
+O sistema utiliza:
+- Armazenamento de tokens JWT no localStorage
+- Rotas protegidas com redirecionamento automático
+- Validação de formulários no lado cliente
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 👤 Autenticação
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+A autenticação é gerenciada através do `AuthContext`, que fornece:
+
+- Estado do usuário atual
+- Função de login
+- Função de logout
+- Estado de carregamento
+
+## 💡 Uso da Autenticação
+
+```jsx
+// Em qualquer componente:
+import { useAuth } from '../context/AuthContext';
+
+function MeuComponente() {
+  const { user, login, logout, loading } = useAuth();
+  
+  // Seu código aqui
+}
+```
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
