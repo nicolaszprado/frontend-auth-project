@@ -8,6 +8,8 @@
 
 Este projeto implementa um sistema de autenticação completo em React utilizando JavaScript (TypeScript também) e CSS. O sistema inclui páginas de login, registro, rota protegida e uma página inicial para usuários autenticados. (foi criado com objetivo de ser integrado a outro projeto meu: https://github.com/nicolaszprado/auth-project-nicolasz)
 
+Principais telas (Login e registro) estão com link disponivel pra visualização.
+
 ## 🚀 Características
 
 - ✅ Sistema de autenticação completo (login/registro)
@@ -82,24 +84,24 @@ const API_URL = "https://sua-api.com";
 
 ## 🖥️ Páginas
 
-### Página de Login
+### Página de Login - https://imgur.com/a/7ItXNjF
 - Formulário com validação de email e senha
 - Opção "Lembrar-me"
 - Link para a página de registro
 - Gestão de erros de autenticação
 
-### Página de Registro
+### Página de Registro - https://imgur.com/a/4V8T1YJ
 - Formulário com validação completa
 - Nome de usuário, email e senha
 - Confirmação de senha
 - Gestão de erros (ex: email já cadastrado)
 
-### Página Inicial
+### Página Inicial - 
 - Exibe informações do usuário logado
 - Botão de logout
 - Interface protegida para usuários autenticados
 
-### Página 404
+### Página 404 - 
 - Página de erro personalizada
 - Link para retornar à página inicial
 
