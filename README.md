@@ -6,7 +6,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este projeto implementa um sistema de autenticação completo em React utilizando JavaScript puro e CSS. O sistema inclui páginas de login, registro, rota protegida e uma página inicial para usuários autenticados. (foi criado com objetivo de ser integrado a outro projeto meu: https://github.com/nicolaszprado/auth-project-nicolasz)
+Este projeto implementa um sistema de autenticação completo em React utilizando JavaScript (TypeScript também) e CSS. O sistema inclui páginas de login, registro, rota protegida e uma página inicial para usuários autenticados. (foi criado com objetivo de ser integrado a outro projeto meu: https://github.com/nicolaszprado/auth-project-nicolasz)
 
 ## 🚀 Características
 
